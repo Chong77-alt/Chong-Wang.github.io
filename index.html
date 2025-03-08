@@ -1,51 +1,130 @@
-<p>Hello 大家好</p>
-<p>我是Chong Wang，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的学术主页</title>
     <style>
+        /* 全局样式 */
         body {
-            background-image: url('个人照片_small_size.png'); /* 替换为你的背景图 */
+            background-image: url('picture/个人照片_small_size.png'); /* 替换为你的背景图 */
             background-size: cover; /* 让背景铺满整个页面 */
             background-position: center;
             background-attachment: fixed; /* 固定背景不随滚动条移动 */
             font-family: Arial, sans-serif;
             color: white; /* 让文字颜色变白，避免和背景图混在一起 */
             text-align: center;
-            padding-top: 20%;
+            padding-top: 10%;
+            transition: background 0.5s, color 0.5s; /* 过渡动画 */
         }
+
+        /* 导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* 标题和文本样式 */
         h1 {
             font-size: 36px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加阴影增强可读性 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         p {
             font-size: 18px;
+            margin: 10px;
         }
+
+        /* 链接样式 */
         a {
-            color: #ffcc00; /* 链接变成亮色 */
+            color: #ffcc00;
             font-weight: bold;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        /* 夜间模式 */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode nav {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 夜间模式按钮 */
+        .toggle-mode {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">Chong Wang</div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+        <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+
     <h1>欢迎来到我的学术主页</h1>
-    <p>这里展示我的研究、论文和学术项目。</p>
+    <p>我是 Chong Wang，这是我的个人网站。</p>
+    <p>很高兴你来到这里, 你可以在以下的网站找到我：</p>
+
     <ul>
         <li><a href="https://scholar.google.com/citations?user=w9uwerAAAAAJ&hl=zh-CN">学术主页</a></li>
-        <li> <a href="https://github.com/Chong77-alt">Github</a> </li>
-        <li> <a href="https://www.zhihu.com/people/jian-jian-zhi-shi-63">我的知乎</a> </li>
-        <li> <a href="https://space.bilibili.com/384340851?spm_id_from=333.1007.0.0">我的B站</a> </li>
-        <li> <a href="https://space.bilibili.com/384340851?spm_id_from=333.1007.0.0">我的小红书</a> </li>
+        <li><a href="https://github.com/Chong77-alt">Github</a></li>
+        <li><a href="https://www.zhihu.com/people/jian-jian-zhi-shi-63">我的知乎</a></li>
+        <li><a href="https://space.bilibili.com/384340851?spm_id_from=333.1007.0.0">我的B站</a></li>
+        <li><a href="https://space.bilibili.com/384340851?spm_id_from=333.1007.0.0">我的小红书</a></li>
     </ul>
+
+    <script>
+        // 夜间模式切换
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
