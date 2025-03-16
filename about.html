@@ -55,6 +55,25 @@
             text-align: center;
             font-size: 28px;
         }
+
+        /* 夜间模式 */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode nav {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 夜间模式按钮 */
+        .toggle-mode {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -68,13 +87,23 @@
             <li><a href="publications.html">Publications</a></li>
             <li><a href="projects.html">Projects</a></li>
         </ul>
+        <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
     </nav>
 
     <div class="container">
         <h1>关于我</h1>
         <p> 我来自河南南阳,目前是北京交通大学计算机科学与技术学院在读的硕士生.我本科同样就读于北京交通大学,理学院知行班(应用物理学方向).
             目前我的研究方向为知识驱动的机器学习,包括物理驱动神经网络,神经微分方程.同时对Diffusion Model有兴趣. </p>
+        <p>我热衷于探索前沿科技，尤其是人工智能和机器学习领域。我坚信通过不断学习和研究，我们可以推动技术的进步，为社会带来更多的创新和变革。</p>
+        <p>在我的研究生涯中，我参与了多个项目，积累了丰富的经验和技能。我希望通过这个网站，与大家分享我的研究成果和心得体会。</p>
     </div>
+
+    <script>
+        // 夜间模式切换
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 
 </body>
 </html>
