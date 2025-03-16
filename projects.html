@@ -55,6 +55,25 @@
             text-align: center;
             font-size: 28px;
         }
+
+        /* 夜间模式 */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode nav {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 夜间模式按钮 */
+        .toggle-mode {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +87,7 @@
             <li><a href="publications.html">Publications</a></li>
             <li><a href="projects.html">Projects</a></li>
         </ul>
+        <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
     </nav>
 
     <div class="container">
@@ -78,6 +98,13 @@
             <li><strong>项目 2：</strong> 研究项目介绍 2</li>
         </ul>
     </div>
+
+    <script>
+        // 夜间模式切换
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 
 </body>
 </html>
