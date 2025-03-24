@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我 | Chong Wang</title>
     <style>
+        /* 全局样式 */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
             color: #333;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
         }
 
+        /* 导航栏样式 */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
             position: fixed;
             top: 0;
             left: 0;
@@ -26,55 +28,118 @@
             z-index: 1000;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
-        .nav-links a {
-            text-decoration: none;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
             color: white;
-            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
+        nav ul li a:hover {
             color: #ffcc00;
         }
 
+        /* 主要内容区域样式 */
         .container {
             max-width: 800px;
             margin: 80px auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex; /* 添加弹性布局 */
+            align-items: center; /* 垂直居中对齐 */
+        }
+
+        /* 图片样式 */
+        .profile-image {
+            width: 200px; /* 设置图片宽度 */
+            height: auto; /* 保持图片比例 */
+            margin-right: 20px; /* 图片右侧留出间距 */
+            border-radius: 8px; /* 图片圆角 */
         }
 
         h1 {
             text-align: center;
             font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 夜间模式样式 */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode nav {
+            background-color: #333;
+        }
+
+        .dark-mode .container {
+            background-color: #222;
+        }
+
+        /* 夜间模式切换按钮样式 */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 24px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
 
+<body>
+    <!-- 导航栏 -->
     <nav>
-        <div class="logo">Chong Wang</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">🙋‍♂️ About</a></li>
+            <li><a href="blog.html">📝 Blog</a></li>
+            <li><a href="publications.html">📚 Publications</a></li>
+            <li><a href="projects.html">💻 Projects</a></li>
         </ul>
     </nav>
 
+    <!-- 主要内容区域 -->
     <div class="container">
-        <h1>关于我</h1>
-        <p> 我来自河南南阳,目前是北京交通大学计算机科学与技术学院在读的硕士生.我本科同样就读于北京交通大学,理学院知行班(应用物理学方向).
-            目前我的研究方向为知识驱动的机器学习,包括物理驱动神经网络,神经微分方程.同时对Diffusion Model有兴趣. </p>
+        <!-- 添加个人照片 -->
+        <img class="profile-image" src="个人照片_small_size.png" alt="个人照片">
+        <div>
+            <h1>About me</h1>
+            <p> I am from Nanyang, Henan, and I am currently a master's student at the School of Computer Science and Technology, Beijing Jiaotong University. My research focuses on knowledge-driven machine learning, which includes physics-informed neural networks and neural differential equations. Additionally, I have a keen interest in diffusion models. </p>
+        </div>
     </div>
 
+    <!-- 夜间模式切换按钮 -->
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
+
+    <script>
+        // 夜间模式切换函数
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
+
 </html>
