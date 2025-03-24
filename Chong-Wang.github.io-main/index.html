@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的学术主页</title>
+    <style>
+        /* 全局样式 */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* 主内容容器样式 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* 个人信息部分样式 */
+        .personal-info {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .personal-info h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .personal-info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* 社交链接样式 */
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links li a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links li a:hover {
+            color: #0056b3;
+        }
+
+        /* 教育背景部分样式 */
+        .education-section {
+            text-align: center;
+        }
+
+        .education-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .education-textarea {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .education-textarea p {
+            margin: 5px 0;
+        }
+
+        /* 夜间模式样式 */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode nav {
+            background-color: #333;
+        }
+
+        .dark-mode .education-textarea {
+            background-color: #222;
+            color: white;
+            border-color: #555;
+        }
+
+        /* 夜间模式切换按钮样式 */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">🙋‍♂️ About</a></li>
+            <li><a href="blog.html">📝 Blog</a></li>
+            <li><a href="publications.html">📚 Publications</a></li>
+            <li><a href="projects.html">💻 Projects</a></li>
+            <!-- 将按钮移动到列表的最后 -->
+            <li class="toggle-mode-container">
+                <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
+            </li>
+        </ul>
+        
+        <script>
+            // 夜间模式切换函数
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark-mode");
+            }
+        </script>
+        
+
+    </nav>
+
+    <!-- 主内容容器 -->
+    <div class="main-container">
+        <!-- 个人信息部分 -->
+        <div class="personal-info">
+            <h1>欢迎来到我的学术主页</h1>
+            <p>我是 Chong Wang，这是我的个人网站。</p>
+            <p>很高兴你来到这里，你可以在以下的网站找到我：</p>
+            <ul class="social-links">
+                <li><a href="https://scholar.google.com/citations?user=w9uwerAAAAAJ&hl=zh-CN">Google Scholar</a></li>
+                <li><a href="https://github.com/Chong77-alt">Github</a></li>
+                <li><a href="https://www.zhihu.com/people/jian-jian-zhi-shi-63">我的知乎</a></li>
+                <li><a href="https://space.bilibili.com/384340851?spm_id_from=333.1007.0.0">我的B站</a></li>
+                <li><a href="https://www.xiaohongshu.com/user/profile/60d385700000000001001e62">我的小红书</a></li>
+            </ul>
+        </div>
+        <!-- 教育背景模块 -->
+        <div class="education-section">
+            <h2>我的教育背景</h2>
+            <div class="education-textarea">
+                <p>2022.09 - 至今：北京交通大学，计算机科学与技术学院，硕士在读</p>
+                <p>2024.03 - 2024.09：达姆施塔特工业大学，计算机科学，交换</p>
+                <p>2018.09 - 2022.06：北京交通大学，理学院知行班（应用物理学方向），本科</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 夜间模式切换按钮
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
+
+    <script>
+        // 夜间模式切换函数
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script> -->
+</body>
+
+</html>
